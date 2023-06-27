@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Username: {{ author.first_name }} {{ author.last_name }}
+    <a href="{% url 'shelves:author-delete' pk=author.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'shelves:author-update' pk=author.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
+  </h1>
+
+  <p><strong>First name:</strong> {{ author.first_name }}</p>
+  <p><strong>Last name:</strong> {{ author.last_name }}</p>
+  <p><strong>Is staff:</strong> {{ author.is_staff }}</p>
+
+  <div class="ml-3">
+    <h4>Books</h4>
+
+    {% for book in author.books.all %}
+        <hr>
+        <p><strong>Title:</strong> {{ book.title }}</p>
+        <p><strong>Publishing house:</strong> {{ book.pub_house.name }}</p>
+        <p class="text-muted"><strong>Id:</strong> {{book.id}}</p>
+
+    {% empty %}
+      <p>No books!</p>
+    {% endfor %}
+  </div>
+{% endblock %}

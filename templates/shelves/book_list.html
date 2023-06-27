@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Book List
+    <a style="float: right" href="{% url 'shelves:book-create' %}" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
+   <form action="" method="get" class="form-inline">
+  {{ search_form.as_p }}
+    <input class="btn btn-secondary" type="submit" value="🔍">
+  </form>
+
+  {% if book_list %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Price</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+
+      {% for book in book_list %}
+        <tr>
+          <td>
+            {{ book.id }}
+          </td>
+          <td>
+            {{ book.title }}
+          </td>
+          <td>
+            {{ book.genre.genre }}
+          </td>
+          <td>
+            {{ book.price }}
+          </td>
+          <td>
+            <a href="{% url 'shelves:book-update' pk=book.id %}">
+              Update
+            </a>
+          </td>
+          <td>
+            <a style="color: red"
+              href="{% url 'shelves:book-delete' pk=book.id %}">
+              Delete
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}
+      <p>There are no books in the bookshelf.</p>
+  {% endif %}
+{% endblock %}
