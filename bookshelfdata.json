@@ -1,0 +1,114 @@
+[
+  {
+    "model": "shelves.publication",
+    "pk": 1,
+    "fields": {
+      "name": "Vivat"
+    }
+  },
+  {
+    "model": "shelves.publication",
+    "pk": 2,
+    "fields": {
+      "name": "Bookchef"
+    }
+  },
+  {
+    "model": "shelves.publication",
+    "pk": 3,
+    "fields": {
+      "name": "Ранок"
+    }
+  },
+  {
+    "model": "shelves.publication",
+    "pk": 4,
+    "fields": {
+      "name": "КСД"
+    }
+  },
+  {
+    "model": "shelves.genre",
+    "pk": 1,
+    "fields": {
+      "genre": "novel"
+    }
+  },
+  {
+    "model": "shelves.genre",
+    "pk": 2,
+    "fields": {
+      "genre": "fantasy"
+    }
+  },
+  {
+    "model": "shelves.genre",
+    "pk": 3,
+    "fields": {
+      "genre": "detective"
+    }
+  },
+  {
+    "model": "shelves.author",
+    "pk": 2,
+    "fields": {
+      "username": "Sarah",
+      "first_name": "Sarah J.",
+      "last_name": "Maas",
+      "email": "sarah@maas.com"
+    }
+  },
+  {
+    "model": "shelves.author",
+    "pk": 3,
+    "fields": {
+      "username": "Jennifer",
+      "first_name": "Jennifer L.",
+      "last_name": "Armentrout",
+      "email": "jennifer@armentrout.com"
+    }
+  },
+    {
+    "model": "shelves.author",
+    "pk": 4,
+    "fields": {
+      "username": "Agatha",
+      "first_name": "Agatha",
+      "last_name": "Christie",
+      "email": "agatha@christie.com"
+    }
+  },
+  {
+    "model": "shelves.book",
+    "pk": 1,
+    "fields": {
+      "title": "Death on the Nile",
+      "pub_house": 4,
+      "genre": 3,
+      "authors": [4],
+      "price": 220
+    }
+  },
+  {
+    "model": "shelves.book",
+    "pk": 2,
+    "fields": {
+      "title": "From blood and ash",
+      "pub_house": 2,
+      "genre": 2,
+      "authors": [3],
+      "price": 350
+    }
+  },
+  {
+    "model": "shelves.book",
+    "pk": 2,
+    "fields": {
+      "title": "A court of thorns and roses",
+      "pub_house": 1,
+      "genre": 2,
+      "authors": [2],
+      "price": 360
+    }
+  }
+]
