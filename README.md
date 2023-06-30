@@ -43,6 +43,9 @@ The project uses environment variables to store sensitive information. Follow th
 ## Running the Application
 
 1. Set up the environment variables as mentioned in the previous section.
-2. Start the development server:
-
+2. Install the project dependencies:
+`pip install -r requirements.txt`
+3. Apply database migrations:
+`python manage.py migrate`
+4. Start the development server:
 `python manage.py runserver`
