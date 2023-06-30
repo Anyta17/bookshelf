@@ -46,6 +46,8 @@ urlpatterns = [
     path("genres/create", GenreCreateView.as_view(), name="genre-create"),
     path("genres/<int:pk>/delete", GenreDeleteView.as_view(), name="genre-delete"),
     path("genres/<int:pk>/update", GenreUpdateView.as_view(), name="genre-update"),
+
+    path("accounts/profile/", index)
 ]
 
 app_name = "shelves"
