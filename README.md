@@ -28,8 +28,8 @@ python manage.py runserver # starts Django Server
 `python manage.py loaddata bookshelfdata.json`
 
 - You can use the following superuser (or create another yourself):
-    - Login: testuser
-    - Password: testpassword
+    - Login: `admin.user`
+    - Password: `1qazcde3`
 
   `python manage.py createsuperuser`
 
