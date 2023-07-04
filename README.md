@@ -8,62 +8,71 @@ To set up the project locally, follow these steps:
 
 1. Clone the repository:
 
-  ```
-  git clone https://github.com/Anyta17/bookshelf.git
-  ```
+    ```
+    git clone https://github.com/Anyta17/bookshelf.git
+    ```
 
 2. Navigate to the project directory:
 
-  ```
-  cd bookshelf
-  ```
+    ```
+    cd bookshelf
+    ```
 
 3. Create a virtual environment and activate it:
 
-  ```
-  python -m venv venv
-  venv\Scripts\activate
-  ```
+    ```
+    python -m venv venv
+    venv\Scripts\activate
+    ```
 
 
 4. Install the required dependencies:
-
-  ```
-  pip install -r requirements.txt
-  ```
+    
+    ```
+    pip install -r requirements.txt
+    ```
 
 Note: Replace the empty string with your desired secret key.
 
-**Environment Variables:** You can set up environment variables in the `.env` file to configure the application. For example, the `DJANGO_SECRET_KEY` variable can be set to your desired secret key. By default, the application will use the secret key `django-insecure-9bwy@g=&wuzlpsb#f77z^a41)=fo)03m(1!fv@!km4@$bntxzo` if no value is provided.
 
-5. Apply the database migrations:
+5. Create a `.env` file in the root directory of the project and add the following environment variables:
 
-  ```
-  python manage.py migrate`
-  ```
+    ```
+    DJANGO_SECRET_KEY=<your-secret-key>
+    ```
+
+Note: Replace `<your-secret-key>` with your desired secret key.
+
+**Environment Variables:** You can set up environment variables in the `.env` file to configure the application. For example, the `DJANGO_SECRET_KEY` variable can be set to your desired secret key.
+
+6. Apply the database migrations:
+
+    ```
+    python manage.py migrate`
+    ```
 
 **Note on Database:** Ensure that you have removed the actual database file from the repository, as it should not be stored in version control. Running the migrations will create a new database file.
 
 **Automatically Adding Test User:** To simplify the user's experience, a test user can be added automatically during the migration process. Follow these steps:
 
-1. Create all the objects that should be in the user's database after migration in the usual way.
+- Create all the objects that should be in the user's database after migration in the usual way.
 
-2. Create a fixture with all the required data:
+- Create a fixture with all the required data:
 
    ```
    python manage.py dumpdata > fixture_data.json
    ```
 
-3. Create an empty migration related to your app:
+- Create an empty migration related to your app:
 
    ```
    python manage.py makemigrations APP_NAME --empty
    ```
 
-4. In the created migration file, add the following command to the operations:
+- In the created migration file, add the following command to the operations:
 
    ```python
-   from django.db import migrations
+    from django.db import migrations
 
    def func(apps, schema_editor):
        from django.core.management import call_command
@@ -83,7 +92,7 @@ Note: Replace the empty string with your desired secret key.
        ]
    ```
 
-6. Start the development server:
+7. Start the development server:
 
   ```
   python manage.py runserver
@@ -107,14 +116,11 @@ Note: Replace the empty string with your desired secret key.
 `python manage.py loaddata bookshelfdata.json`
 
 
-- You can use the following superuser (or create another yourself):
+- You can use the following superuser:
 
     - Login: `admin.user`
 
     - Password: `1qazcde3`
-
-
-  `python manage.py createsuperuser`
 
 ## Environment Variables
 
