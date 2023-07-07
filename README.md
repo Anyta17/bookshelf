@@ -48,49 +48,10 @@ Note: Replace `<your-secret-key>` with your desired secret key.
 6. Apply the database migrations:
 
     ```
-    python manage.py migrate`
+    python manage.py migrate
     ```
 
 **Note on Database:** Ensure that you have removed the actual database file from the repository, as it should not be stored in version control. Running the migrations will create a new database file.
-
-**Automatically Adding Test User:** To simplify the user's experience, a test user can be added automatically during the migration process. Follow these steps:
-
-- Create all the objects that should be in the user's database after migration in the usual way.
-
-- Create a fixture with all the required data:
-
-   ```
-   python manage.py dumpdata > fixture_data.json
-   ```
-
-- Create an empty migration related to your app:
-
-   ```
-   python manage.py makemigrations APP_NAME --empty
-   ```
-
-- In the created migration file, add the following command to the operations:
-
-   ```python
-    from django.db import migrations
-
-   def func(apps, schema_editor):
-       from django.core.management import call_command
-       call_command("loaddata", "bookshelfdata.json")
-
-   def reverse_func(apps, schema_editor):
-       pass
-
-   class Migration(migrations.Migration):
-
-       dependencies = [
-           ("APP_NAME", "0001_initial"),  # Replace APP_NAME with your app's name
-       ]
-
-       operations = [
-           migrations.RunPython(func, reverse_func),
-       ]
-   ```
 
 7. Start the development server:
 
