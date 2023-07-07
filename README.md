@@ -43,7 +43,21 @@ Note: Replace the empty string with your desired secret key.
 
 Note: Replace `<your-secret-key>` with your desired secret key.
 
-**Environment Variables:** You can set up environment variables in the `.env` file to configure the application. For example, the `DJANGO_SECRET_KEY` variable can be set to your desired secret key.
+## Environment Variables
+
+ You can set up environment variables in the `.env` file to configure the application. For example, the `DJANGO_SECRET_KEY` variable can be set to your desired secret key.
+
+The project uses environment variables to store sensitive information. Follow the steps below to set up your environment:
+
+
+1. Create a file named `.env` in the root directory of the project.
+
+2. Copy the contents from `.env.sample` into `.env`.
+
+3. Replace the values in `.env` with your actual environment variable values.
+
+
+**Note:** Make sure not to commit your `.env` file to version control. It should be listed in the `.gitignore` file.
 
 6. Apply the database migrations:
 
@@ -74,7 +88,7 @@ Note: Replace `<your-secret-key>` with your desired secret key.
 - Use the following command to load prepared data from fixture to test and debug your code:
 
   
-`python manage.py loaddata bookshelfdata.json`
+`python manage.py loaddata fixture_data.json`
 
 
 - You can use the following superuser:
@@ -82,18 +96,3 @@ Note: Replace `<your-secret-key>` with your desired secret key.
     - Login: `admin.user`
 
     - Password: `1qazcde3`
-
-## Environment Variables
-
-
-The project uses environment variables to store sensitive information. Follow the steps below to set up your environment:
-
-
-1. Create a file named `.env` in the root directory of the project.
-
-2. Copy the contents from `.env.sample` into `.env`.
-
-3. Replace the values in `.env` with your actual environment variable values.
-
-
-**Note:** Make sure not to commit your `.env` file to version control. It should be listed in the `.gitignore` file.
