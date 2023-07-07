@@ -83,7 +83,7 @@
     "pk": 1,
     "fields": {
       "title": "Death on the Nile",
-      "pub_house": 4,
+      "publication": 4,
       "genre": 3,
       "authors": [4],
       "price": 220
@@ -94,7 +94,7 @@
     "pk": 2,
     "fields": {
       "title": "From blood and ash",
-      "pub_house": 2,
+      "publication": 2,
       "genre": 2,
       "authors": [3],
       "price": 350
@@ -105,7 +105,7 @@
     "pk": 2,
     "fields": {
       "title": "A court of thorns and roses",
-      "pub_house": 1,
+      "publication": 1,
       "genre": 2,
       "authors": [2],
       "price": 360
