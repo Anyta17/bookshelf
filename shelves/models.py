@@ -25,7 +25,7 @@ class Author(AbstractUser):
 
 class Book(models.Model):
     title = models.CharField(max_length=255)
-    pub_house = models.ForeignKey(Publication, on_delete=models.CASCADE)
+    publication = models.ForeignKey(Publication, on_delete=models.CASCADE)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     authors = models.ManyToManyField(Author, related_name="authors")
     price = models.IntegerField()
