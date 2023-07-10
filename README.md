@@ -2,6 +2,10 @@
 
 Django project for managing books, authors, genres and publications in Bookshelf
 
+## Check it out!
+
+[Bookshelf project deployed to Render](https://bookshelf-62me.onrender.com/)
+
 ## Setup Instructions
 
 To set up the project locally, follow these steps:
