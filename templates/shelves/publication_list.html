@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h1>
+    Publication List
+    <a style="float: right" href="{% url 'shelves:publication-create' %}" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
+
+  {% if publication_list %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+
+      {% for publication in publication_list %}
+        <tr>
+          <td>
+            {{ publication.id }}
+          </td>
+          <td>
+            {{ publication.name }}
+          </td>
+          <td>
+            <a href="{% url 'shelves:publication-update' pk=publication.id %}">
+              Update
+            </a>
+          </td>
+          <td>
+            <a style="color: red"
+              href="{% url 'shelves:publication-delete' pk=publication.id %}">
+              Delete
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}
+    <p>There are no publications in the bookshelf.</p>
+  {% endif %}
+{% endblock %}

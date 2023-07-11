@@ -1,0 +1,16 @@
+<ul class="sidebar-nav list-group">
+  {% if user.is_authenticated %}
+    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
+    <li class="list-group-item"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+  {% else %}
+    <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+  {% endif %}
+
+  <br>
+
+  <li class="list-group-item"><a href="{% url 'shelves:index' %}">Home</a></li>
+  <li class="list-group-item"><a href="{% url 'shelves:author-list' %}">All authors</a></li>
+  <li class="list-group-item"><a href="{% url 'shelves:book-list' %}">All book</a></li>
+  <li class="list-group-item"><a href="{% url 'shelves:genre-list' %}">All genres</a></li>
+  <li class="list-group-item"><a href="{% url 'shelves:publication-list' %}">All publishing houses</a></li>
+</ul>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    {{ book.title }}
+    <a href="{% url 'shelves:book-delete' pk=book.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'shelves:book-update' pk=book.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
+  </h1>
+  <p>Book: ({{ book.title }}, {{ book.genre.genre }}, {{ book.pub_house.name }})</p>
+  <div>
+  <h4>Authors</h4>
+
+    {% for author in author.all %}
+      <hr>
+      <p><strong>First name:</strong> {{ author.first_name }}</p>
+      <p><strong>Last name:</strong> {{ author.last_name }}</p>
+      <p class="text-muted"><strong>Id:</strong> {{author.id}}</p>
+
+    {% empty %}
+      <p>No authors!</p>
+    {% endfor %}
+  </div>
+{% endblock %}
