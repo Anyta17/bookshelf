@@ -86,15 +86,6 @@ The project uses environment variables to store sensitive information. Follow th
 
 * Powerful admin panel for advanced managing
 
-
-## 
-
-- Use the following command to load prepared data from fixture to test and debug your code:
-
-  
-`python manage.py loaddata fixture_data.json`
-
-
 - You can use the following superuser:
 
     - Login: `admin.user`
